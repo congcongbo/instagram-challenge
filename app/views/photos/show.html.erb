@@ -1,0 +1,19 @@
+<p>
+  <strong>Title:</strong>
+  <%= @photo.title %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @photo.text %>
+</p>
+
+<h2>Comments</h2>
+<% render @photo.comments %>
+
+<h2>Add a comment</h2>
+<%= render 'comments/form' %>
+
+<%= link_to 'edit', edit_photo_path(@photo) %> |
+<%= link_to 'back', photos_path %> |
+<%= link_to 'new photo', new_photo_path %>

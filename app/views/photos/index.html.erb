@@ -1,0 +1,21 @@
+<h1>All Photos</h1>
+
+<table>
+  <tr>
+    <th> Title</th>
+    <th>Text</th>
+  </tr>
+
+  <% @photos.each do |photo| %>
+    <tr>
+      <td><%= photo.title %></td>
+      <td><%= photo.text %></td>
+      <td><%= link_to 'view', photo_path(photo) %></td>
+      <td><%= link_to 'edit', edit_photo_path(photo) %></td>
+      <td><%= link_to 'delete', photo_path(photo),
+                                method: :delete,
+                                data: { confirm: 'Are you sure?'} %></td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to 'new photo', new_photo_path %>

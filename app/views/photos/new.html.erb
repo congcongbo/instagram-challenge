@@ -1,0 +1,19 @@
+New photo
+
+<%= form_for :photo, url: photos_path do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :text %><br>
+    <%= f.text_area :text %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'back', photos_path %>
